@@ -10,14 +10,16 @@ namespace _21_ochko
     {
         private const int LENGTH_OF_CARD_VALUES = 10;
         private const int LENGTH_OF_CARD_SUITS = 4;
+        private const int START_BID = 25;
+        private const int START_AMOUNT_OF_POINTS = 0;
         private List<Card> _deck;
         private List<Card> _arm;
-        
 
         public Croupier()
         {
-            _deck = CreateDeck();
-            _arm = new List<Card>(); // Заполнить картами.Тут должны находится карты,которых
+            _deck = CreateDeck(); // Колода карт
+            _arm = CreateCroupierHand(); // Рука крупье с двумя картами,отличающимися от карт игрока
+            
         }
 
         private static List<Card> CreateDeck()
@@ -34,6 +36,7 @@ namespace _21_ochko
             }
             return cards;
         }
+
         public List<Card> GiveTwoFirstCards()
         {
             List<Card> twoCardDeck = new List<Card>();
@@ -43,7 +46,6 @@ namespace _21_ochko
             return twoCardDeck;
 
         }
-
 
         public Card GiveCard()
         {
@@ -56,15 +58,37 @@ namespace _21_ochko
 
             return card;
         }
-
-        public void RaiseBid() //поднять ставку
+        
+        //Приватный метод который создаёт руку крупье,т.е. выдаёт ему две карты
+        private List<Card> CreateCroupierHand()
         {
+            List<Card> croupireDeck = new List<Card>();
+            croupireDeck.Add(GiveCard());
+            croupireDeck.Add(GiveCard());
 
+            return croupireDeck;
         }
-        // Метод, который считает количество очков,которые дают тебе карты в руке
-        public void CalculateHandsCost(List<Card> cards) 
-        {
 
+        public int RaiseBid(int bidPrice, int moneyInWallet) //поднять ставку
+        {
+            int BidCost = START_BID;
+            if (moneyInWallet >= bidPrice)
+            {
+                BidCost += bidPrice;
+            }
+            return BidCost;
+        }
+        // Метод, который считает количество очков,которые дают тебе карты в твоей руке
+        public string CalculateHandsCost(List<Card> cards) 
+        {
+            int costCardsInHandle = START_AMOUNT_OF_POINTS;
+            foreach (Card card in cards)
+            {
+                costCardsInHandle += (int)card.CardValue ;
+            }
+            return $"Сумма очков в руке:{costCardsInHandle}";
+
+           
         }
 
 

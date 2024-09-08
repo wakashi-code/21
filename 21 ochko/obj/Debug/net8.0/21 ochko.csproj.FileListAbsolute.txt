@@ -13,3 +13,18 @@ C:\Users\wakashi\Desktop\Github\C# games\21\21 ochko\obj\Debug\net8.0\refint\21 
 C:\Users\wakashi\Desktop\Github\C# games\21\21 ochko\obj\Debug\net8.0\21 ochko.pdb
 C:\Users\wakashi\Desktop\Github\C# games\21\21 ochko\obj\Debug\net8.0\21 ochko.genruntimeconfig.cache
 C:\Users\wakashi\Desktop\Github\C# games\21\21 ochko\obj\Debug\net8.0\ref\21 ochko.dll
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.GeneratedMSBuildEditorConfig.editorconfig
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.AssemblyInfoInputs.cache
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.AssemblyInfo.cs
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.csproj.CoreCompileInputs.cache
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.sourcelink.json
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.dll
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\refint\21 ochko.dll
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.pdb
+R:\TheOrderOfExpulsion\21\21 ochko\bin\Debug\net8.0\21 ochko.exe
+R:\TheOrderOfExpulsion\21\21 ochko\bin\Debug\net8.0\21 ochko.deps.json
+R:\TheOrderOfExpulsion\21\21 ochko\bin\Debug\net8.0\21 ochko.runtimeconfig.json
+R:\TheOrderOfExpulsion\21\21 ochko\bin\Debug\net8.0\21 ochko.dll
+R:\TheOrderOfExpulsion\21\21 ochko\bin\Debug\net8.0\21 ochko.pdb
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\21 ochko.genruntimeconfig.cache
+R:\TheOrderOfExpulsion\21\21 ochko\obj\Debug\net8.0\ref\21 ochko.dll

@@ -13,42 +13,45 @@ namespace _21_ochko
     {
  
         private const string SUIT_CHARS = "♥♦♠♣";
+        private const int START_CARD_VALUE = 6;
+
          private CardValue _cardValue;
          private CardSuit _cardSuit;
 
          public CardSuit CardSuit => _cardSuit;
-         public CardValue Value => _cardValue;
+         public CardValue CardValue => _cardValue;
 
+        
         public Card(CardValue cardValue, CardSuit cardSuit)
         {
             _cardValue = cardValue;
             _cardSuit = cardSuit;
         }
-
+        // Метод для получения красивого вывода номинала карты и её масти.
         public override string ToString()
         {
-
             return $"{GetCharFromSuit()} : {GetStringFromValue()}";
         }
-
+        // Метод для получения масти.
         private char GetCharFromSuit()
         {
             return SUIT_CHARS[(int)_cardSuit];
         }
         
-        // сделать второй метод который выдаёт номинал карты
+        // Метод который выдаёт номинал карты.
         public string GetStringFromValue()
         {
-            if((int)_cardValue >= 6)
+            if((int)_cardValue >= START_CARD_VALUE)
                 return ((int)_cardValue).ToString();
 
             return _cardValue.ToString();
         }
 
     }
-    public enum CardValue : int
+    // перечисление для хранения номинала карт
+    public enum CardValue : int 
     {
-        Ace = 1,
+        Ace = 1,    
         Jack = 2,
         Queen = 3,
         King = 4,
@@ -62,6 +65,7 @@ namespace _21_ochko
 
 
     }
+    // перечисения для хранения мастей карт
     public enum CardSuit : int
     {
         Heart = 0, // Сердце, Черви
