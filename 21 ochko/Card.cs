@@ -11,17 +11,40 @@ namespace _21_ochko
     /// </summary>
     public class Card //Должно быть 36 штук
     {
-       // private cardValue _cardValue = cardValue.Ace;
-         private CardValue cardValue;
-         private CardSuit cardSuit;
+ 
+        private const string SUIT_CHARS = "♥♦♠♣";
+         private CardValue _cardValue;
+         private CardSuit _cardSuit;
 
-         public CardSuit CardSuit => cardSuit;
-         public CardValue Value => cardValue;
+         public CardSuit CardSuit => _cardSuit;
+         public CardValue Value => _cardValue;
 
+        public Card(CardValue cardValue, CardSuit cardSuit)
+        {
+            _cardValue = cardValue;
+            _cardSuit = cardSuit;
+        }
 
+        public override string ToString()
+        {
 
+            return $"{GetCharFromSuit()} : {GetStringFromValue()}";
+        }
 
+        private char GetCharFromSuit()
+        {
+            return SUIT_CHARS[(int)_cardSuit];
+        }
         
+        // сделать второй метод который выдаёт номинал карты
+        public string GetStringFromValue()
+        {
+            if((int)_cardValue >= 6)
+                return ((int)_cardValue).ToString();
+
+            return _cardValue.ToString();
+        }
+
     }
     public enum CardValue : int
     {
@@ -34,17 +57,17 @@ namespace _21_ochko
         Eight = 8,
         Nine = 9,
         Ten = 10,
-        AceLarge = 11,
+        // 
         //туз может дать 1 или 11 очков в зависимости от ситуации
 
 
     }
-    public enum CardSuit
+    public enum CardSuit : int
     {
-        Heart, //Сердце, Черви
-        Diamond, // Бубны
-        Spade, // Пики
-        Club // Трефы, Крести
+        Heart = 0, // Сердце, Черви
+        Diamond = 1, // Бубны
+        Spade = 2,  // Пики
+        Club = 3 // Трефы, Крести
     }
 
 
