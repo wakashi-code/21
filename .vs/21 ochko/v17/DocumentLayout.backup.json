@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\croupier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\croupier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\croupier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\croupier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|c:\\users\\wakashi\\desktop\\github\\c# games\\21\\21 ochko\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DEDAF9B-F089-4C67-BA25-9ABD3CF677E1}|21 ochko\\21 ochko.csproj|solutionrelative:21 ochko\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Game.cs",
               "RelativeDocumentMoniker": "21 ochko\\Game.cs",
               "ToolTip": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Game.cs",
               "RelativeToolTip": "21 ochko\\Game.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T09:59:23.958Z",
               "IsPinned": true,
@@ -44,17 +48,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Menu.cs",
+              "RelativeDocumentMoniker": "21 ochko\\Menu.cs",
+              "ToolTip": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Menu.cs",
+              "RelativeToolTip": "21 ochko\\Menu.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwC4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T09:55:22.581Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Card.cs",
               "DocumentMoniker": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Card.cs",
               "RelativeDocumentMoniker": "21 ochko\\Card.cs",
               "ToolTip": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Card.cs",
               "RelativeToolTip": "21 ochko\\Card.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAcwDYAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAuwCoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T09:59:20.193Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -64,23 +81,33 @@
               "RelativeDocumentMoniker": "21 ochko\\Wallet.cs",
               "ToolTip": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Wallet.cs",
               "RelativeToolTip": "21 ochko\\Wallet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T09:59:24.823Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Croupier.cs",
               "DocumentMoniker": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Croupier.cs",
               "RelativeDocumentMoniker": "21 ochko\\Croupier.cs",
               "ToolTip": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\Croupier.cs",
               "RelativeToolTip": "21 ochko\\Croupier.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowDIAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAzwHUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T09:59:22.947Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{93c5e7ad-af06-49e6-a756-b8f3eaca790d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

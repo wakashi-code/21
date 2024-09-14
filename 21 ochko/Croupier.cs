@@ -10,15 +10,17 @@ namespace _21_ochko
     {
         private const int LENGTH_OF_CARD_VALUES = 10;
         private const int LENGTH_OF_CARD_SUITS = 4;
-        private const int START_BID = 25;
         private const int START_AMOUNT_OF_POINTS = 0;
+        private const int COST_TO_CROUPIE_TO_THINK_ABOUT_NEXT_MOVE = 17;
         private List<Card> _deck;
         private List<Card> _arm;
+
+        public List<Card> Arm => _arm;
 
         public Croupier()
         {
             _deck = CreateDeck(); // Колода карт
-            _arm = CreateCroupierHand(); // Рука крупье с двумя картами,отличающимися от карт игрока
+            _arm = CreateCroupierArm(); // Рука крупье с двумя картами,отличающимися от карт игрока
             
         }
 
@@ -44,7 +46,6 @@ namespace _21_ochko
             twoCardDeck.Add(GiveCard());
 
             return twoCardDeck;
-
         }
 
         public Card GiveCard()
@@ -58,9 +59,15 @@ namespace _21_ochko
 
             return card;
         }
+
+        public List<Card> AddCardTo(List<Card> cardsDeck)
+        {
+            cardsDeck.Add(GiveCard());
+            return cardsDeck;
+        }
         
         //Приватный метод который создаёт руку крупье,т.е. выдаёт ему две карты
-        private List<Card> CreateCroupierHand()
+        private List<Card> CreateCroupierArm()
         {
             List<Card> croupireDeck = new List<Card>();
             croupireDeck.Add(GiveCard());
@@ -71,12 +78,19 @@ namespace _21_ochko
 
         public int RaiseBid(int bidPrice, int moneyInWallet) //поднять ставку
         {
-            int BidCost = START_BID;
+            int BidCost = 0;
             if (moneyInWallet >= bidPrice)
             {
                 BidCost += bidPrice;
             }
             return BidCost;
+        }
+
+        public int GetBidFromPlayer(int bidPrice, int moneyInWallet)
+        {
+            if (bidPrice <= moneyInWallet)
+                return bidPrice;
+            else return 0;
         }
         // Метод, который считает количество очков,которые дают тебе карты в твоей руке
         public string CalculateHandsCost(List<Card> cards) 
@@ -86,11 +100,26 @@ namespace _21_ochko
             {
                 costCardsInHandle += (int)card.CardValue ;
             }
-            return $"Сумма очков в руке:{costCardsInHandle}";
-
-           
+            return $"{costCardsInHandle}";
         }
 
+        public List<Card> SkipMove(List<Card> croupierHand)
+        {
+            return croupierHand;
+        }
+
+        public void ThinkAboutNextMove(Croupier croupier)
+        {
+            if(int.Parse(croupier.CalculateHandsCost(croupier.Arm)) >= COST_TO_CROUPIE_TO_THINK_ABOUT_NEXT_MOVE)
+            {
+                SkipMove(croupier.Arm);
+            }
+            else if (int.Parse(croupier.CalculateHandsCost(croupier.Arm)) <= COST_TO_CROUPIE_TO_THINK_ABOUT_NEXT_MOVE)
+            {
+                croupier.AddCardTo(croupier.Arm);
+            }
+        }
+        
 
     }
 }

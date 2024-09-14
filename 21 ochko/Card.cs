@@ -27,6 +27,7 @@ namespace _21_ochko
             _cardValue = cardValue;
             _cardSuit = cardSuit;
         }
+
         // Метод для получения красивого вывода номинала карты и её масти.
         public override string ToString()
         {
