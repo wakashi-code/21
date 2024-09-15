@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\wakashi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "R:\\visual code instruments\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\21 ochko.csproj",
+      "projectUniqueName": "R:\\TheOrderOfExpulsion\\21\\21 ochko\\21 ochko.csproj",
       "projectName": "21 ochko",
-      "projectPath": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\21 ochko.csproj",
-      "packagesPath": "C:\\Users\\wakashi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wakashi\\Desktop\\Github\\C# games\\21\\21 ochko\\obj\\",
+      "projectPath": "R:\\TheOrderOfExpulsion\\21\\21 ochko\\21 ochko.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "R:\\TheOrderOfExpulsion\\21\\21 ochko\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "R:\\visual code instruments\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\wakashi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -71,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

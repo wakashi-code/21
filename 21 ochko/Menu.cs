@@ -24,27 +24,28 @@ namespace _21_ochko
 
         public Menu() { }
 
-        public int CheckUserInput(int playerInput, List<Card> playerHandle, Croupier croupier)
+        public bool CheckUserInput(int playerInput, List<Card> playerHandle, Croupier croupier)
         {
             if(playerInput == 0)
             {
                 Console.Clear();
-                return 1;
+                return true;
             }
             else if (playerInput == 1)
             {
-                croupier.AddCardTo(croupier.AddCardTo(playerHandle));
-                return 1;
+                croupier.AddCardTo(playerHandle);
+                croupier.ThinkAboutNextMove(croupier);
+                return true;
             }
             else if (playerInput == 2)
             {
                 croupier.ThinkAboutNextMove(croupier);
-                return 1;
+                return true;
             }
             else
             {
                 Console.WriteLine("Некорректный ввод");
-                return 0;
+                return false;
                 
             }
         }
