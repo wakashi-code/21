@@ -35,12 +35,12 @@ namespace _21_ochko
             {
                 croupier.AddCardTo(playerHandle);
                 croupier.ThinkAboutNextMove(croupier);
-                return true;
+                return false;
             }
             else if (playerInput == 2)
             {
                 croupier.ThinkAboutNextMove(croupier);
-                return true;
+                return false;
             }
             else
             {
