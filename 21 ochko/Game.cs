@@ -13,28 +13,12 @@ namespace _21_ochko
         static void Main(string[] args)
         {
             PlayGame();
-                /*
-                ShowCroupierCardAfterMove(croupier);
-                CompareAmountIfAbove21(croupier, playerArm, croupier.Arm);
-                
-                _menu.CheckUserInput(CheckAndReturnPlayerInput(), playerArm, croupier);
-
-                 ShowPlayerAmounts(croupier, playerArm);
-                 ShowConsoleCommands();
-
-
-                CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm);
-
-                ShowCroupierHandFull(croupier);
-                */
-
-                // Переделать так,чтобы был цикл в котором ты набираешь карты и видишь свои очки,затем после выбора команды пасс крупье набирает карты и уже после того как крупье сделает пасс
-                // сравнивать очки и выводить результат
-
         }
         static void PlayGame()
         {
         int _playerBid = 0;
+        bool _IsEnded = false;
+            bool isEnoughCard = false;
         do
         {
             Croupier croupier = new Croupier();
@@ -44,76 +28,114 @@ namespace _21_ochko
             AskPlayer("Сделайте ставку:");
             _playerBid = croupier.GetBidFromPlayer(CheckAndReturnPlayerInput(), _wallet.PlayerMoney);
             TakeBidFromWallet(_playerBid);
+
             while (_playerBid == 0) // так как метод на проверку хуйня и просто ретёрнит 0, здесь я буду сверять с нулём
                 _playerBid = croupier.GetBidFromPlayer(CheckAndReturnPlayerInput(), _wallet.PlayerMoney);
+
             ShowPlayerBid(_playerBid);
             ShowPlayerArm(playerArm);
             ShowPlayerAmounts(croupier, playerArm);
             ShowCroupierCard(croupier);
             ShowConsoleCommands();
- 
-            _menu.CheckUserInput(CheckAndReturnPlayerInput(), playerArm, croupier);
 
-             ShowPlayerArm(playerArm);
-             ShowPlayerAmounts(croupier, playerArm);
-             ShowConsoleCommands();
-
-             while (!CompareAmountIfAbove21(croupier, playerArm, croupier.Arm))
+                do
                 {
-                    _menu.CheckUserInput(CheckAndReturnPlayerInput(), playerArm, croupier);
+                    if (_menu.CheckUserInput(CheckAndReturnPlayerInput(), playerArm, croupier) == true)
+                        isEnoughCard = true;
+                    
+                    else
+                    {
+                        ShowPlayerArm(playerArm);
+                        ShowPlayerAmounts(croupier, playerArm);
+                        if(int.Parse(croupier.CalculateHandsCost(playerArm)) < AMOUNTS_TO_LOSE || int.Parse(croupier.CalculateHandsCost(croupier.Arm)) < AMOUNTS_TO_LOSE)
+                            ShowConsoleCommands();
+                    }
+                    
+                } while (!isEnoughCard && !CompareAmountIfAbove21WithoutText(croupier, playerArm, croupier.Arm));
 
-                    if (CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm) == "Победа")
+
+
+            while (!_IsEnded)
+                {
+
+                    if (CompareAmountIfAbove21(croupier, playerArm, croupier.Arm))
                     {
-                        AddCashToWallet(_playerBid);
+                        ShowPlayerArm(playerArm);
+                        ShowCroupierHandFull(croupier);
+                        ShowCroupierAmounts(croupier);
+                        _IsEnded = true;
+
                         EndGame();
                     }
-                    else if(CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm) == "Проигрыш")
-                    {   
-                        EndGame();
-                    }
-                    else if(CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm) == "Ничья")
+
+                    else
                     {
-                        ReturnBidToWalletIfDraw(_playerBid);
-                        EndGame();
+                        if (CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm) == "Победа")
+                        {
+                            AddDoubleCashToWallet(_playerBid);
+                            ShowPlayerArm(playerArm);
+                            ShowCroupierHandFull(croupier);
+                            ShowCroupierAmounts(croupier);
+                            _IsEnded = true;
+
+                            EndGame();
+                            
+                        }
+                        else if (CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm) == "Проигрыш")
+                        {
+                            ShowPlayerArm(playerArm);
+                            ShowCroupierHandFull(croupier);
+                            ShowCroupierAmounts(croupier);
+                            _IsEnded = true;
+
+                            EndGame();
+                            
+
+                        }
+                        else if (CompareAmountsBetweenPlayerAndCroupier(croupier, playerArm, croupier.Arm) == "Ничья")
+                        {
+                            
+                            ReturnBidToWalletIfDraw(_playerBid);
+                            ShowPlayerArm(playerArm);
+                            ShowCroupierHandFull(croupier);
+                            ShowCroupierAmounts(croupier);
+                            _IsEnded = true;
+
+                            EndGame();
+                            
+                        }
+
                     }
-                  
-                  ShowPlayerArm(playerArm);
-                  ShowPlayerAmounts(croupier, playerArm);
-                  ShowConsoleCommands();
-                    ShowCroupierCardAfterMove(croupier);
+
                 }
-
-
-
-
-
 
             } while (_wallet.PlayerMoney > 0);
 
         }
 
         static void EndGame()
-        {
-            PrintColoredText("Игра окончена.", ConsoleColor.Red);
+        {   
+            PrintColoredText("Игра окончена.\n", ConsoleColor.Red);
             PlayGame();
             
         }
         static void ReturnBidToWalletIfDraw(int playerBid) => _wallet.AddCashToWallet(playerBid);
-        static void AddCashToWallet(int playerBid) => _wallet.AddCashToWallet(playerBid * 2);
+        static void AddDoubleCashToWallet(int playerBid) => _wallet.AddCashToWallet(playerBid * 2);
         static void TakeBidFromWallet(int playerBid) => _wallet.TryTakeCashFromWallet(playerBid);
         static void ShowPlayerBid(int playerBid) => PrintColoredText($"Ваша ставка: {playerBid}", ConsoleColor.Cyan);
-        static void ShowCroupierCard(Croupier croupier) => PrintColoredText($"Карты крупье: {croupier.Arm[0]}, ?", ConsoleColor.Red);
-        static void ShowCroupierCardAfterMove(Croupier croupier) => PrintColoredText($"Карты крупье: {croupier.Arm[0]}, ?, {croupier.Arm[croupier.Arm.Count - 1]}", ConsoleColor.Red);
+        static void ShowCroupierCard(Croupier croupier) => PrintColoredText($"\nКарты крупье: {croupier.Arm[0]}, ?", ConsoleColor.Red);
         static void ShowGreeting() => PrintColoredText("Добро пожаловать в игру '21 очко'.", ConsoleColor.Yellow);
         static void ShowPlayerBalance() => PrintColoredText($"Денег у вас в кошельке: {_wallet.PlayerMoney}", ConsoleColor.Cyan);
         static void AskPlayer(string text) => Console.WriteLine(text);
         static void ShowPlayerAmounts(Croupier croupier, List<Card> playerArm) => PrintColoredText($"Сумма ваших очков: {croupier.CalculateHandsCost(playerArm)}", ConsoleColor.Green);
         static void ShowConsoleCommands() => PrintColoredText("Введите 1,чтобы взять ещё одну карту.\nНажмите 2 чтобы спасовать.\nНажмите 0 если хотите закончить игру", ConsoleColor.White);
+        static void ShowCroupierAmounts(Croupier croupier) => PrintColoredText($"Сумма очков крупье: {croupier.CalculateHandsCost(croupier.Arm)}", ConsoleColor.Cyan);
 
         static void ShowCroupierHandFull(Croupier croupier)
         {
+            PrintColoredText("\nКарты крупье:", ConsoleColor.Cyan);
             foreach (Card card in croupier.Arm)
-                PrintColoredText($"Карта крупье: {card}", ConsoleColor.Cyan);
+                PrintColoredText($"{card}", ConsoleColor.Cyan);
         }
 
         static void PrintColoredText(string text, ConsoleColor color)
@@ -141,12 +163,30 @@ namespace _21_ochko
                 return "Победа";
             }
                
-            else
+            else if (int.Parse(userAmounts) > int.Parse(croupierAmounts))
+            {
                 PrintColoredText("Ничья", ConsoleColor.Cyan);
                 return "Ничья";
+            }
+            return "";
             
         }
         
+        static bool CompareAmountIfAbove21WithoutText(Croupier croupier, List<Card> playerArm, List<Card> croupierArm)
+        {
+            var userAmounts = croupier.CalculateHandsCost(playerArm);
+            var croupierAmounts = croupier.CalculateHandsCost(croupierArm);
+            if (int.Parse(userAmounts) > AMOUNTS_TO_LOSE)
+            {
+                return true;
+            }
+            else if (int.Parse(croupierAmounts) > AMOUNTS_TO_LOSE)
+            {
+                return true;
+            }
+            return false;
+        }
+
         static bool CompareAmountIfAbove21(Croupier croupier, List<Card> playerArm, List<Card> croupierArm)
         {
             var userAmounts = croupier.CalculateHandsCost(playerArm);
@@ -154,6 +194,7 @@ namespace _21_ochko
             if (int.Parse(userAmounts) > AMOUNTS_TO_LOSE)
             {
                 PrintColoredText($"Вы набрали больше 21 очков.Вы проиграли", ConsoleColor.Red);
+                AddDoubleCashToWallet();
                 return true;
             }
             else if (int.Parse(croupierAmounts) > AMOUNTS_TO_LOSE)

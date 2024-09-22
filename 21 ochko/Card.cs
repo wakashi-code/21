@@ -52,7 +52,7 @@ namespace _21_ochko
     // перечисление для хранения номинала карт
     public enum CardValue : int 
     {
-        Ace = 1,    
+           
         Jack = 2,
         Queen = 3,
         King = 4,
@@ -61,6 +61,7 @@ namespace _21_ochko
         Eight = 8,
         Nine = 9,
         Ten = 10,
+        Ace = 11
         // 
         //туз может дать 1 или 11 очков в зависимости от ситуации
 

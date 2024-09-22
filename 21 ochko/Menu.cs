@@ -29,7 +29,7 @@ namespace _21_ochko
             if(playerInput == 0)
             {
                 Console.Clear();
-                return true;
+                return false;
             }
             else if (playerInput == 1)
             {
@@ -40,7 +40,7 @@ namespace _21_ochko
             else if (playerInput == 2)
             {
                 croupier.ThinkAboutNextMove(croupier);
-                return false;
+                return true;
             }
             else
             {
